@@ -1,9 +1,16 @@
-const names = require("./names");
-const { john, peter } = require("./names");
-const sayHi = require("./utils");
-const data = require("./alternitive-flavour");
+const os = require("os");
 
-require("./mind-grenade"); //this code will work, even
-//if we do not assign it into a variable. NOTE: when you
-//import a module, you actually invoke it
-// node app - The sum is 15
+const user = os.userInfo();
+console.log(user);
+
+console.log(`The system uptime is ${os.uptime()} seconds`);
+
+const currentOs = {
+  name: os.type(),
+  release: os.release(),
+  totalMemory: os.totalmem(),
+  freeMemory: os.freemem(),
+};
+
+console.log(currentOs);
+
