@@ -1,16 +1,13 @@
-const os = require("os");
+const { readFileSync, writeFileSync } = require("fs");
 
-const user = os.userInfo();
-console.log(user);
+const first = readFileSync("./content/first.txt", "utf8");
+const second = readFileSync("./content/second.txt", "utf8");
 
-console.log(`The system uptime is ${os.uptime()} seconds`);
+console.log(first, second);
 
-const currentOs = {
-  name: os.type(),
-  release: os.release(),
-  totalMemory: os.totalmem(),
-  freeMemory: os.freemem(),
-};
-
-console.log(currentOs);
-
+//Now, if you want to append to the file
+writeFileSync(
+  "./content/result-sync.txt",
+  `Here is the result: ${first}, ${second}`,
+  { flag: "a" }
+);
