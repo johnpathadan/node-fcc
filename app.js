@@ -5,9 +5,8 @@ const second = readFileSync("./content/second.txt", "utf8");
 
 console.log(first, second);
 
-//Now, if you want to append to the file
 writeFileSync(
-  "./content/result-sync.txt",
+  "./content/result-sync123.txt",
   `Here is the result: ${first}, ${second}`,
   { flag: "a" }
 );
